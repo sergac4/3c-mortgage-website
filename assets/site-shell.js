@@ -20,6 +20,18 @@ const siteFooter = `
   <p>Cash-sale inquiries may be introduced to participating independent buyers. 3C Mortgage Group does not guarantee an offer, purchase a property through this form, or provide legal, tax or investment advice.</p>
   <div class="footer-bottom"><span>© 2026 3C Mortgage Group</span><span><a href="/privacy">Privacy</a> · <a href="/legal">Legal</a> · <a href="/accessibility">Accessibility</a> · <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noreferrer">NMLS Consumer Access</a></span></div>
 </div><div class="mobile-cta"><a href="tel:+19253866528">Call 3C</a><a href="https://app.3cmortgagegroup.com/" target="_blank" rel="noreferrer">Apply now</a></div></footer>`;
+function mountSiteShell() {
+  if (!document.querySelector('.site-header')) {
+    document.body.insertAdjacentHTML('afterbegin', siteHeader);
+  }
 
-document.body.insertAdjacentHTML("afterbegin", siteHeader);
-document.body.insertAdjacentHTML("beforeend", siteFooter);
+  if (!document.querySelector('.site-footer')) {
+    document.body.insertAdjacentHTML('beforeend', siteFooter);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mountSiteShell, { once: true });
+} else {
+  mountSiteShell();
+}
