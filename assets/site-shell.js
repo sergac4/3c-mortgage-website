@@ -36,14 +36,14 @@ if (document.readyState === 'loading') {
   mountSiteShell();
 }
 
-if (!document.querySelector('script[data-widget-id="6a834a38326a7fbb1cfb7aad"]')) {
+if (!document.querySelector('script[data-widget-id="6a8605807eb38cd3ac0d1f2a"]')) {
   const chatWidget = document.createElement('script');
   chatWidget.src = 'https://widgets.leadconnectorhq.com/loader.js';
   chatWidget.setAttribute(
     'data-resources-url',
     'https://widgets.leadconnectorhq.com/chat-widget/loader.js'
   );
-  chatWidget.setAttribute('data-widget-id', '6a834a38326a7fbb1cfb7aad');
+  chatWidget.setAttribute('data-widget-id', '6a8605807eb38cd3ac0d1f2a');
   chatWidget.setAttribute('data-source', 'WEB_USER');
   document.body.appendChild(chatWidget);
 }
