@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Landlord Exit & Equity Review | 3C Mortgage Group</title>
+  <meta name="description" content="A private, no-obligation review for California rental-property owners weighing repairs, tenant issues, cash flow, refinancing, equity access or a possible sale.">
+  <link rel="stylesheet" href="/assets/index.css">
+  <link rel="icon" href="/assets/3c-logo.png">
+  <style>
+    .landlord-hero{color:#fff;background:#0b0c0e;position:relative;overflow:hidden}.landlord-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050607f7 0%,#050607e8 47%,#050607bd 100%),url('/assets/street-scene-residential.jpg') center/cover no-repeat}.landlord-hero .shell{position:relative;z-index:1}.lead-layout{display:grid;grid-template-columns:1.03fr .97fr;gap:62px;align-items:center;padding:78px 0 72px}.lead-copy h1{font-size:clamp(3rem,6vw,5.8rem);max-width:720px}.lead-copy p{color:#d5d9dd;max-width:670px;font-size:1.16rem}.lead-points{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:12px}.lead-points li{padding-left:28px;position:relative;color:#f2f3f4;font-weight:700}.lead-points li:before{content:"✓";position:absolute;left:0;color:#ff4a55}.lead-box{background:#fff;color:#0b0c0e;padding:34px;box-shadow:0 28px 80px #0008}.lead-box h2{font-size:2rem;margin-bottom:8px}.lead-box>p{font-size:.9rem;margin-bottom:24px}.lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lead-box .field.full{grid-column:1/-1}.lead-box .field input,.lead-box .field select{min-height:48px}.lead-box .consent{margin:14px 0}.lead-box .consent span{line-height:1.45}.lead-box .consent-disclosure{font-size:.68rem;line-height:1.45}.lead-box .button{width:100%;margin-top:6px}.lead-status{font-size:.8rem;margin:12px 0 0}.lead-status.error{color:#a20d18}.lead-status.success{color:#176a39;font-weight:800}.proof-strip{background:#c81724;color:#fff}.proof-strip .shell{display:grid;grid-template-columns:repeat(3,1fr)}.proof-strip div{padding:22px 28px;border-right:1px solid #ffffff42}.proof-strip div:first-child{padding-left:0}.proof-strip div:last-child{border-right:0}.proof-strip strong{display:block}.proof-strip span{font-size:.78rem;color:#ffd9dc}.option-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.option-card{min-height:250px;padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.option-card span{color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.14em}.option-card h3{margin-top:42px}.privacy-note{font-size:.77rem;margin-top:18px}@media(max-width:980px){.lead-layout{grid-template-columns:1fr;gap:42px}.option-grid{grid-template-columns:1fr 1fr}}@media(max-width:700px){.lead-layout{padding:55px 0 45px}.lead-box{padding:24px 20px}.lead-form-grid,.proof-strip .shell,.option-grid{grid-template-columns:1fr}.lead-box .field.full{grid-column:auto}.proof-strip div,.proof-strip div:first-child{padding:16px 0;border-right:0;border-bottom:1px solid #ffffff3b}.proof-strip div:last-child{border-bottom:0}}
+  </style>
+</head>
+<body>
+<script src="/assets/site-shell.js"></script>
+<main>
+  <section class="landlord-hero">
+    <div class="shell lead-layout">
+      <div class="lead-copy">
+        <span class="eyebrow">California rental owners</span>
+        <h1>When the rental starts feeling like a second job, know your options.</h1>
+        <p>Tenant issues, repairs, vacancies, rising costs or thin cash flow can change the math fast. Get a private, no-obligation review before you decide whether to keep the property, restructure the financing, access equity or sell.</p>
+        <ul class="lead-points">
+          <li>No Social Security number or loan application required</li>
+          <li>Compare financing and exit paths—not just one sales pitch</li>
+          <li>Local California mortgage and real-estate perspective</li>
+        </ul>
+      </div>
+
+      <div class="lead-box" id="review">
+        <span class="eyebrow">Free landlord review</span>
+        <h2>What is making you reconsider the rental?</h2>
+        <p>About 60 seconds. Start with non-sensitive property details.</p>
+        <form id="landlord-lead-form" novalidate>
+          <div class="lead-form-grid">
+            <div class="field full"><label for="ll-issue">Biggest issue right now</label><select id="ll-issue" name="primary_issue" required><option value="">Select one</option><option>Tenant or collection problems</option><option>Repairs or deferred maintenance</option><option>Vacancy or turnover</option><option>Cash flow is too thin or negative</option><option>Mortgage payment or financing</option><option>I want to access equity</option><option>I am considering selling</option><option>I am simply exploring options</option><option>Other</option></select></div>
+            <div class="field"><label for="ll-city">Property city</label><input id="ll-city" name="property_city" autocomplete="address-level2" required></div>
+            <div class="field"><label for="ll-zip">Property ZIP</label><input id="ll-zip" name="property_zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div>
+            <div class="field"><label for="ll-occupancy">Occupancy</label><select id="ll-occupancy" name="occupancy" required><option value="">Select one</option><option>Tenant occupied</option><option>Vacant</option><option>Owner occupied now</option><option>Mixed / multiple units</option><option>Other</option></select></div>
+            <div class="field"><label for="ll-timeline">Decision timeline</label><select id="ll-timeline" name="timeline" required><option value="">Select one</option><option>0–30 days</option><option>31–90 days</option><option>3–6 months</option><option>6+ months</option><option>Just exploring</option></select></div>
+            <div class="field"><label for="ll-name">Full name</label><input id="ll-name" name="full_name" autocomplete="name" required></div>
+            <div class="field"><label for="ll-phone">Phone</label><input id="ll-phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field full"><label for="ll-email">Email</label><input id="ll-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field full"><label for="ll-goal">What outcome sounds best right now?</label><select id="ll-goal" name="preferred_outcome" required><option value="">Select one</option><option>Keep the property if the numbers can improve</option><option>Lower or restructure the financing</option><option>Access some of the equity</option><option>Explore an as-is sale</option><option>I am not sure—show me the options</option></select></div>
+            <div class="field full"><label for="ll-callback">How should we follow up?</label><select id="ll-callback" name="callback_preference" required><option value="">Select one</option><option value="call_today">Call me today</option><option value="call_next_business_day">Call me next business day</option><option value="text_email_first">Text or email me first</option></select></div>
+            <div class="field full" aria-hidden="true" style="position:absolute;left:-10000px"><label for="company-website">Company website</label><input id="company-website" name="company_website" tabindex="-1" autocomplete="off"></div>
+          </div>
+
+          <label class="consent"><input type="checkbox" id="contact-consent" name="contact_consent" required><span>I agree that 3C Financial Group Inc. DBA 3C Mortgage Group may contact me by phone or email about this property inquiry. Consent is not a condition of purchasing any product or service.</span></label>
+          <label class="consent"><input type="checkbox" id="ai-call-consent" name="ai_call_consent"><span>If I request a phone call, I expressly request and agree that the callback may use an artificial or prerecorded voice and/or an AI-generated voice. I understand I can choose text or email first instead.</span></label>
+          <label class="consent"><input type="checkbox" id="sms-consent" name="sms_consent_transactional"><span>I agree to receive non-marketing text messages about this inquiry, including follow-up and appointment messages. Message and data rates may apply. Reply STOP to opt out and HELP for help.</span></label>
+          <p class="consent-disclosure">Submitting this form does not create a loan application, listing agreement, purchase contract or commitment to lend. Review our <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="/terms-and-conditions" target="_blank" rel="noreferrer">Terms &amp; Conditions</a>.</p>
+          <button class="button button-red" type="submit" id="landlord-submit">Show me my options</button>
+          <p class="lead-status" id="landlord-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="privacy-note">Please do not submit Social Security numbers, dates of birth, bank information or loan documents here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-strip"><div class="shell"><div><strong>No-obligation review</strong><span>Explore first. Decide second.</span></div><div><strong>Multiple possible outcomes</strong><span>Keep · refinance · access equity · sell</span></div><div><strong>California-focused</strong><span>3C Mortgage Group · NMLS #1813428</span></div></div></section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading"><span class="eyebrow">One property. Four paths.</span><h2>The goal is not to push you into a sale. It is to fix the problem.</h2></div>
+      <div class="option-grid">
+        <div class="option-card"><span>01</span><h3>Keep it</h3><p>See whether the property still makes sense once rents, expenses, equity and financing are viewed together.</p></div>
+        <div class="option-card"><span>02</span><h3>Restructure</h3><p>Evaluate whether a refinance or different loan structure could improve the monthly picture, subject to qualification and available programs.</p></div>
+        <div class="option-card"><span>03</span><h3>Use the equity</h3><p>Explore whether available equity can support another goal without immediately selling the property.</p></div>
+        <div class="option-card"><span>04</span><h3>Exit</h3><p>If the landlord job is no longer worth it, compare a traditional sale or possible independent cash-buyer introduction.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section story-section">
+    <div class="shell content-grid">
+      <div><span class="eyebrow">Why this works</span><h2>You do not need another generic “cash offer” form.</h2><p class="lead">The right answer depends on why the rental stopped working for you. A tenant problem, a financing problem and a repair problem can lead to three very different decisions.</p><p>3C starts with the problem and the timeline, then helps you understand which realistic path deserves a closer look.</p><div class="button-row"><a class="button button-red" href="#review">Get my landlord review</a><a class="button button-outline-dark" href="tel:+19253866528">Call (925) 386-6528</a></div></div>
+      <div class="guideline-panel"><span class="eyebrow">Important</span><h3>What this review is not</h3><p>It is not legal, tax or investment advice. It is not a promise of a loan, a cash offer or a particular financial result. If tax consequences, tenancy law or legal rights are part of your decision, 3C may recommend that you consult the appropriate licensed professional.</p></div>
+    </div>
+  </section>
+</main>
+<script src="/assets/landlord-leads.js"></script>
+</body>
+</html>
