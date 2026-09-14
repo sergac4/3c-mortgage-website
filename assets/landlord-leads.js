@@ -1,4 +1,9 @@
 (() => {
+  document.body.classList.add('landlord-funnel');
+  const funnelStyle = document.createElement('style');
+  funnelStyle.textContent = '.landlord-funnel .nav,.landlord-funnel .mobile-menu,.landlord-funnel .mobile-cta{display:none!important}.landlord-funnel .header-inner{justify-content:flex-start}';
+  document.head.appendChild(funnelStyle);
+
   const form = document.getElementById('landlord-lead-form');
   if (!form) return;
 
