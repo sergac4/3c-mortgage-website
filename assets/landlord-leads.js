@@ -10,8 +10,22 @@
   const status = document.getElementById('landlord-status');
   const submit = document.getElementById('landlord-submit');
   const callback = document.getElementById('ll-callback');
-  const aiConsent = document.getElementById('ai-call-consent');
+  const phone = document.getElementById('ll-phone');
+  const smsConsent = document.getElementById('sms-consent');
+  const smsRow = document.getElementById('sms-consent-row');
+  let submissionId = crypto.randomUUID();
   const startedAt = Date.now();
+
+  function updateContactFields() {
+    const wantsText = callback.value === 'text_first';
+    phone.required = wantsText || callback.value === 'human_call';
+    smsRow.hidden = !wantsText;
+    smsRow.style.display = wantsText ? '' : 'none';
+    smsConsent.required = wantsText;
+    if (!wantsText) smsConsent.checked = false;
+  }
+  callback.addEventListener('change', updateContactFields);
+  updateContactFields();
 
   const params = new URLSearchParams(window.location.search);
   const attribution = {};
@@ -30,17 +44,13 @@
 
     if (!form.reportValidity()) return;
 
-    const wantsCall = callback.value === 'call_today' || callback.value === 'call_next_business_day';
-    if (wantsCall && !aiConsent.checked) {
-      setStatus('Please confirm the AI/artificial-voice callback disclosure, or choose “Text or email me first.”', 'error');
-      aiConsent.focus();
-      return;
-    }
+    const preference = callback.value;
 
     const data = Object.fromEntries(new FormData(form).entries());
     data.contact_consent = document.getElementById('contact-consent').checked;
-    data.ai_call_consent = aiConsent.checked;
-    data.sms_consent_transactional = document.getElementById('sms-consent').checked;
+    data.ai_call_consent = false;
+    data.sms_consent_transactional = preference === 'text_first' && smsConsent.checked;
+    data.submission_id = submissionId;
     data.attribution = attribution;
     data.page_url = window.location.href.slice(0, 1200);
     data.referrer = document.referrer.slice(0, 1200);
@@ -61,9 +71,10 @@
       if (!response.ok || !result.ok) throw new Error(result.error || 'Submission failed');
 
       form.reset();
-      setStatus(wantsCall
-        ? 'Received. 3C will review your information and follow up using the callback preference you selected.'
-        : 'Received. 3C will review your information and follow up by text or email first.', 'success');
+      updateContactFields();
+      submissionId = crypto.randomUUID();
+      const channels = { email_only: 'by email', human_call: 'with a call from the 3C team', text_first: 'by text' };
+      setStatus(`Received. 3C will review your report request and follow up ${channels[preference]}.`, 'success');
 
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
       if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { lead_source: attribution.utm_source || 'website' });
