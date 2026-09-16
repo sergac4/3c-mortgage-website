@@ -49,7 +49,7 @@
 
     submit.disabled = true;
     submit.textContent = 'Sending…';
-    setStatus('Submitting your review request…');
+    setStatus('Submitting your report request…');
 
     try {
       const response = await fetch('/api/landlord-lead', {
@@ -71,7 +71,7 @@
       setStatus('We could not send the form. Please call 3C at (925) 386-6528 or try again in a moment.', 'error');
     } finally {
       submit.disabled = false;
-      submit.textContent = 'Show me my options';
+      submit.textContent = 'Request my free report';
     }
   });
 })();
