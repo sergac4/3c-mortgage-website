@@ -12,7 +12,7 @@ const siteHeader = `
 const siteFooter = `
 <footer class="site-footer"><div class="shell footer-main">
   <div class="footer-brand"><a href="/" class="brand"><img src="/assets/3c-logo.png" alt=""><span class="brand-copy">3C Mortgage Group<small>Capital · Clarity · Closings</small></span></a><p>3C Financial Group Inc., doing business as 3C Mortgage Group, provides residential and commercial mortgage brokerage guidance for California borrowers, homeowners and real estate investors.</p></div>
-  <div class="footer-col"><h3>Financing</h3><a href="/residential">Residential</a><a href="/commercial">Commercial</a><a href="/commercial#fix-and-flip">Fix &amp; flip</a><a href="https://app.3cmortgagegroup.com/" target="_blank" rel="noreferrer">Apply online ↗</a></div>
+  <div class="footer-col"><h3>Financing</h3><a href="/residential">Residential</a><a href="/commercial">Commercial</a><a href="/commercial#fix-and-flip">Fix &amp; flip</a><a href="/dscr-loans">DSCR investor loans</a><a href="https://app.3cmortgagegroup.com/" target="_blank" rel="noreferrer">Apply online ↗</a></div>
   <div class="footer-col"><h3>Ecosystem</h3><a href="/cash-buyers">Cash buyers</a><a href="/sell-for-cash">Sell for cash</a><a href="/learning">Learning center</a><a href="/about">About 3C</a></div>
   <div class="footer-col"><h3>Contact</h3><a href="tel:+19253866528">(925) 386-6528</a><a href="mailto:sergio@3cmortgagegroup.com">sergio@3cmortgagegroup.com</a><span>3701 Lone Tree Way, Suite 4B<br>Antioch, CA 94509</span><a href="/contact">Send a message</a></div>
 </div><div class="shell footer-legal">

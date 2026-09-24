@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DSCR Investor Loans & Rental Property Financing | 3C Mortgage Group</title>
+  <meta name="description" content="Explore DSCR loans for California investment properties. Estimate your rental property's cash flow ratio and request a personal review of purchase, refinance or cash-out options from 3C Mortgage Group.">
+  <link rel="canonical" href="https://www.3cmortgagegroup.com/dscr-loans">
+  <link rel="icon" href="/assets/3c-logo.png">
+  <link rel="stylesheet" href="/assets/index.css">
+  <link rel="stylesheet" href="/assets/dscr.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"DSCR Investor Loans and Rental Property Financing","description":"Educational DSCR calculator and investment property loan inquiry from 3C Mortgage Group.","url":"https://www.3cmortgagegroup.com/dscr-loans","publisher":{"@type":"Organization","name":"3C Mortgage Group","url":"https://www.3cmortgagegroup.com"}}</script>
+</head>
+<body>
+<script src="/assets/site-shell.js"></script>
+<main>
+  <section class="dscr-hero">
+    <div class="shell dscr-hero-grid">
+      <div><span class="eyebrow">Investment property financing</span><h1>DSCR loans.<br>Let the property's cash flow lead the conversation.</h1><p>Explore rental property financing that may use qualifying rental income rather than relying primarily on traditional employment-income documents. See the numbers first, then talk through the available programs with 3C.</p><div class="button-row"><a class="button button-red" href="#calculator">Calculate my DSCR</a><a class="button button-outline" href="#how-it-works">How it works</a></div><p class="dscr-hero-note">California mortgage brokerage · Company NMLS #1813428 · No obligation to inquire</p></div>
+      <div class="dscr-hero-card" aria-hidden="true"><span>THE INVESTOR LENS</span><strong>Rent<br><small>÷ housing expense</small><br>= DSCR</strong><p>A quick way to understand how the entered rent compares with the entered monthly housing cost.</p></div>
+    </div>
+  </section>
+  <div class="dscr-trust"><div class="shell"><span>Purchase &amp; refinance</span><span>Cash-out options</span><span>1–4 unit investment properties</span><span>Broker access to multiple programs</span></div></div>
+  <section class="content-section" id="calculator">
+    <div class="shell"><div class="dscr-intro"><span class="eyebrow">3C investor tool</span><h2>Run your rental property's numbers.</h2><p>Enter a monthly rent figure and the housing costs you want included. This estimate is educational; lenders may use different rents, expenses and calculations.</p></div>
+      <div class="dscr-tool">
+        <form id="dscr-calculator" class="dscr-inputs">
+          <div class="dscr-form-head"><span>01 / Your scenario</span><p>Use monthly amounts for rent and expenses.</p></div>
+          <div class="dscr-field-grid">
+            <div class="field"><label for="property-value">Purchase price / property value</label><div class="money-field"><span>$</span><input id="property-value" name="property_value" type="number" min="1" step="0.01" inputmode="decimal" required placeholder="500,000"></div></div>
+            <div class="field"><label for="loan-amount">Requested loan amount</label><div class="money-field"><span>$</span><input id="loan-amount" name="loan_amount" type="number" min="1" step="0.01" inputmode="decimal" required placeholder="375,000"></div></div>
+            <div class="field"><label for="rent">Monthly qualifying rent</label><div class="money-field"><span>$</span><input id="rent" name="rent" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="4,200"></div></div>
+            <div class="field"><label for="principal-interest">Monthly principal &amp; interest</label><div class="money-field"><span>$</span><input id="principal-interest" name="principal_interest" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="2,600"></div></div>
+            <div class="field"><label for="taxes">Monthly property taxes</label><div class="money-field"><span>$</span><input id="taxes" name="taxes" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="450"></div></div>
+            <div class="field"><label for="insurance">Monthly property insurance</label><div class="money-field"><span>$</span><input id="insurance" name="insurance" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="150"></div></div>
+            <div class="field"><label for="hoa">Monthly HOA dues</label><div class="money-field"><span>$</span><input id="hoa" name="hoa" type="number" min="0" step="0.01" inputmode="decimal" required value="0"></div></div>
+            <div class="field"><label for="other-expense">Other applicable monthly property expense</label><div class="money-field"><span>$</span><input id="other-expense" name="other_expense" type="number" min="0" step="0.01" inputmode="decimal" required value="0"></div></div>
+          </div>
+          <button class="button button-red" type="submit">Calculate my DSCR</button>
+        </form>
+        <div class="dscr-output" id="dscr-output"><span class="dscr-output-label">02 / Your estimate</span><div id="dscr-placeholder" class="dscr-placeholder"><strong>Your property, in perspective.</strong><p>Complete the fields to see the DSCR estimate, total entered housing expense and loan-to-value.</p></div><div id="dscr-result" hidden aria-live="polite"><div class="dscr-number"><span>Estimated DSCR</span><strong id="dscr-ratio">—</strong></div><div class="dscr-result-row"><span>Entered monthly housing expense</span><strong id="dscr-expense">—</strong></div><div class="dscr-result-row"><span>Loan-to-value (LTV)</span><strong id="dscr-ltv">—</strong></div><p id="dscr-explanation" class="dscr-explanation"></p><p class="dscr-result-note">A ratio of 1.00 means the entered qualifying rent equals the included housing expense. This ratio does not determine approval.</p><button type="button" class="button button-red" id="dscr-options">See My DSCR Loan Options</button></div></div>
+      </div>
+      <p class="dscr-disclosure"><strong>Calculator disclosure:</strong> For informational purposes only. This calculator is not an approval, commitment to lend, or guarantee of eligibility, rate, terms, or loan amount. Actual DSCR calculations, qualifying rents, expenses, LTV limits and underwriting requirements vary by lender and loan program. Your entered P&amp;I is an assumption; this tool does not calculate a mortgage payment.</p>
+    </div>
+  </section>
+  <section class="section dscr-lead-section" id="options" hidden>
+    <div class="shell dscr-lead-layout"><div><span class="eyebrow">Personal program review</span><h2>See which DSCR paths may fit.</h2><p>Send your scenario to 3C so Sergio can review the property, financing goal and available lender programs. This is an inquiry, not a loan application.</p><div class="notice"><strong>Scenario attached</strong><p id="dscr-scenario-summary">Your calculator figures will be included with your request.</p></div></div>
+      <form id="dscr-lead-form" class="inquiry-form">
+        <div class="form-grid"><div class="field full"><label for="loan-purpose">What are you planning?</label><select id="loan-purpose" name="purpose" required><option value="">Select one</option><option value="purchase">Purchase</option><option value="rate_term_refinance">Rate-term refinance</option><option value="cash_out_refinance">Cash-out refinance</option></select></div><div class="field"><label for="property-type">Property type</label><select id="property-type" name="property_type" required><option value="">Select one</option><option value="1_unit">1 unit</option><option value="2_4_units">2–4 units</option><option value="short_term_rental">Short-term rental</option><option value="other">Other / unsure</option></select></div><div class="field"><label for="property-state">Property state</label><input id="property-state" name="state" maxlength="40" autocomplete="address-level1" placeholder="CA" required></div><div class="field"><label for="dscr-name">Full name</label><input id="dscr-name" name="full_name" autocomplete="name" maxlength="120" required></div><div class="field"><label for="dscr-phone">Phone</label><input id="dscr-phone" name="phone" type="tel" autocomplete="tel" maxlength="60" required></div><div class="field full"><label for="dscr-email">Email</label><input id="dscr-email" name="email" type="email" autocomplete="email" maxlength="180" required></div><div class="field full dscr-honeypot" aria-hidden="true"><label for="dscr-company">Company website</label><input id="dscr-company" name="company_website" tabindex="-1" autocomplete="off"></div></div>
+        <label class="consent"><input type="checkbox" name="contact_consent" required><span>I agree that 3C Financial Group Inc. DBA 3C Mortgage Group may contact me by phone or email about this inquiry. Consent is not a condition of purchasing any product or service.</span></label><p class="consent-disclosure">No SMS marketing or automated calling consent is requested here. We will not treat this form as consent for marketing texts or artificial/prerecorded calls. Read our <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="/terms-and-conditions" target="_blank" rel="noreferrer">Terms &amp; Conditions</a>.</p><button type="submit" class="button button-red" id="dscr-submit">Send my scenario</button><p class="lead-status" id="dscr-status" role="status" aria-live="polite"></p><p class="form-note">Do not enter Social Security numbers, dates of birth, account numbers or loan documents.</p>
+      </form></div>
+  </section>
+  <section class="content-section story-section" id="how-it-works"><div class="shell"><div class="section-heading"><span class="eyebrow">Investor financing</span><h2>What a DSCR loan can help you explore.</h2></div><div class="program-grid"><article class="program-card"><span>01 / Property cash flow</span><h3>A different way to assess income</h3><p>Some programs emphasize eligible rental income and the property's housing expense instead of primarily using traditional employment-income documents.</p></article><article class="program-card"><span>02 / Your strategy</span><h3>Buy, refinance or access equity</h3><p>Purchase, rate-term refinance and cash-out programs may be available for eligible investment properties.</p></article><article class="program-card"><span>03 / Lender guidelines</span><h3>More than one program</h3><p>Short-term rental, newer investor, rural-property, higher-LTV and low/no-ratio options may be available through certain lenders. Each has its own conditions and limits.</p></article></div><p class="dscr-program-note">Availability depends on the lender, state, property, occupancy, credit, assets, loan purpose and underwriting. 3C Mortgage Group is a broker and can discuss relevant program options after reviewing your scenario.</p></div></section>
+  <section class="content-section"><div class="shell dscr-close"><div><span class="eyebrow">Ready to review the deal?</span><h2>Start with the numbers. Then get a human answer.</h2></div><div class="button-row"><a class="button button-red" href="#calculator">Use the calculator</a><a class="button button-outline-dark" href="/commercial">Explore commercial financing</a></div></div></section>
+</main>
+<script src="/assets/dscr.js"></script>
+</body>
+</html>
