@@ -1,0 +1,25 @@
+(function(){
+ const $=id=>document.getElementById(id), params=new URLSearchParams(location.search);
+ const persona=['duke','maria'].includes(params.get('persona'))?params.get('persona'):'website';
+ const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n);
+ function track(name){if(typeof window.gtag==='function')window.gtag('event',name,{persona});}
+ function calculate(){
+  const keys=['value','loan','rent','rate','years','tax','insurance','hoa','other'];
+  const x=Object.fromEntries(keys.map(k=>[k,Number($(k).value)]));
+  if(keys.some(k=>$(k).value===''||!Number.isFinite(x[k])||x[k]<0)||x.value<=0||x.loan<=0||x.years<=0||x.years>50||x.rate>100)throw Error('Enter valid positive value, loan and term; expenses and rent must be zero or greater.');
+  const r=x.rate/1200,n=x.years*12;
+  const pi=$('payment_type').value==='interest_only'?x.loan*r:r===0?x.loan/n:x.loan*r/(1-Math.pow(1+r,-n));
+  const expense=pi+x.tax+x.insurance+x.hoa+x.other;
+  if(!Number.isFinite(pi)||!Number.isFinite(expense))throw Error('These inputs are outside the calculator range.');
+  return {...x,payment_type:$('payment_type').value,pi,expense,dscr:expense>0?x.rent/expense:null,ltv:x.loan/x.value*100};
+ }
+ function render(){try{const x=calculate();$('result').replaceChildren();for(const line of [x.dscr===null?'DSCR unavailable: zero housing expense':`DSCR: ${x.dscr.toFixed(2)}`,`Loan-to-value: ${x.ltv.toFixed(2)}%`,`Monthly loan payment: ${money(x.pi)}`,`Included monthly housing expense: ${money(x.expense)}`,x.dscr===null?'':`${x.dscr.toFixed(2)} means approximately $${x.dscr.toFixed(2)} of entered qualifying rent for each $1.00 of included housing expense.`]){const p=document.createElement('p');p.textContent=line;$('result').append(p);}return x;}catch(e){$('result').textContent=e.message;return null;}}
+ function summary(){const x=calculate();if(!/^[A-Za-z]{2}$/.test($('state').value))throw Error('Enter the two-letter property state.');return ['3C DSCR SCENARIO - PRELIMINARY / NOT A QUOTE',`Persona: ${persona}`,`Platform: ${(params.get('utm_source')||'website').slice(0,60)}`,`Campaign: ${(params.get('utm_campaign')||'organic').slice(0,60)}`,`Language: ${$('language').value}`,`Purpose: ${$('purpose').value}`,`Property type: ${$('property_type').value}`,`State: ${$('state').value.toUpperCase().slice(0,2)}`,`Value: ${money(x.value)}`,`Loan: ${money(x.loan)}`,`LTV: ${x.ltv.toFixed(2)}%`,`Qualifying monthly rent: ${money(x.rent)}`,`Illustrative rate: ${x.rate}% / ${x.years} years / ${x.payment_type}`,`Monthly loan payment: ${money(x.pi)}`,`Taxes: ${money(x.tax)}; insurance: ${money(x.insurance)}; HOA: ${money(x.hoa)}; other: ${money(x.other)}`,`Monthly housing expense: ${money(x.expense)}`,`DSCR: ${x.dscr===null?'Unavailable':x.dscr.toFixed(4)}`,`Calculated: ${new Date().toISOString()}`,'Verify all inputs, rent methodology, pricing, reserves and lender eligibility before quoting.'].join('\n');}
+ $('calculator').addEventListener('submit',e=>{e.preventDefault();if(render())track('dscr_calculator_completed');});
+ $('review').addEventListener('click',()=>{if(!render())return;$('review-section').hidden=false;if(persona==='maria')$('language').value='es';$('review-section').scrollIntoView({behavior:'smooth'});track('dscr_review_clicked');});
+ $('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summary());$('copy-status').textContent='Scenario copied.';}catch(e){$('copy-status').textContent='Unable to copy automatically. Please continue to the review form.';}});
+ $('load-form').addEventListener('click',()=>{try{const text=summary(),url=new URL('https://link.3cmortgagegroup.com/widget/form/8TIAZhMK86v6aqgW3rxA');url.searchParams.set('dscr_scenario',text);url.searchParams.set('source',`DSCR ${persona} ${params.get('utm_source')||'website'}`);$('scenario-preview').textContent=text;$('scenario-preview').hidden=false;$('form-link').href=url.href;$('form-fallback').hidden=false;const frame=document.createElement('iframe');frame.title='3C DSCR review contact form';frame.referrerPolicy='no-referrer';frame.src=url.href;$('form-slot').replaceChildren(frame);track('dscr_lead_form_started');}catch(e){$('copy-status').textContent=e.message;}});
+ function invalidate(){ $('form-slot').replaceChildren();$('form-fallback').hidden=true;$('scenario-preview').hidden=true;$('copy-status').textContent='';render(); }
+ ['calculator','review-section'].forEach(id=>$(id).addEventListener('input',invalidate));
+ render();
+})();
