@@ -43,3 +43,7 @@ A DSCR lead is ready for human review only; this work does not approve loans or 
 
 ### Sender audit
 GHL dedicated domain `go.3cmortgagegroup.com` shows SPF, DKIM, tracking CNAME, MX and DMARC all Verified. Dedicated Header is enabled: Sergio at 3C Mortgage Group / sergio@go.3cmortgagegroup.com. Domain warmup is In Progress, Stage 2, shared IP. Do not attribute spam to missing authentication based on these settings; inspect the delivered message Authentication-Results and provider feedback before further changes. No DNS changes made.
+
+## Borrower summary cleanup — October 1, 2026
+
+GHL form now has a hidden DSCR Borrower Summary field with query key `dscr_borrower_summary`. Published email merges `{{contact.dscr_borrower_summary}}`. Calculator preview and copy use clean summary with two-decimal DSCR and human payment labels. Internal DSCR Calculator Scenario remains unchanged for attribution and review. Automated tests cover matching borrower payload, no internal tracking labels, and the user’s interest-only scenario. A new borrower delivery test remains to confirm the new field merge; prior delivery and booking were confirmed by Sergio. Production main is not yet published.
