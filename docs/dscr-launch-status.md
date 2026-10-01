@@ -32,3 +32,14 @@ Do not represent the funnel as tested or drive paid traffic until the public for
 8. Validate sender domain/delivery and program eligibility before marketing lender-specific claims. This calculator is illustrative, not live lender pricing.
 
 A DSCR lead is ready for human review only; this work does not approve loans or submit files to lenders automatically.
+
+## Results-first corrections — Sept 30 evening
+- Sergio successfully opened the public form in his browser and submitted a test; acknowledgment arrived in spam. The earlier access block applies to the agent browser, not proven customer access.
+- Published acknowledgment now merges `{{contact.dscr_calculator_scenario}}`, says Sergio will follow up, and offers the existing active 10-minute Quick Call calendar.
+- Sender explicitly set to sergio@3cmortgagegroup.com; this does not establish SPF/DKIM/DMARC alignment or inbox delivery.
+- Calculator draft includes an optional booking button and a results-first review CTA.
+- Calendar URL observed in GHL Share calendar: https://link.3cmortgagegroup.com/widget/booking/Fmy9SxEJ1BVSNsVsXHva
+- Still required: submit calculator-generated scenario and verify actual numbers in delivered email; test calendar availability/booking and confirmation; audit sender authentication and message headers; deploy calculator after acceptance.
+
+### Sender audit
+GHL dedicated domain `go.3cmortgagegroup.com` shows SPF, DKIM, tracking CNAME, MX and DMARC all Verified. Dedicated Header is enabled: Sergio at 3C Mortgage Group / sergio@go.3cmortgagegroup.com. Domain warmup is In Progress, Stage 2, shared IP. Do not attribute spam to missing authentication based on these settings; inspect the delivered message Authentication-Results and provider feedback before further changes. No DNS changes made.
